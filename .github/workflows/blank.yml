@@ -1,29 +1,20 @@
-name: Automerge
-
+name: PR for release branch
 on:
-    push:
-      branches:
-        - MyBranch2
-
-jobs: 
-  cherry-pick-to-master:
+  push:
+    branches:
+      - MyBranch
+jobs:
+  release_pull_request:
     runs-on: ubuntu-latest
+    name: release_pull_request
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.5.0
-    - name: checrry-pick
-      uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: Create PR to branch
+      uses: gorillio/github-action-cherry-pick@master
       with:
-        branch: 
-          main
-        labels: |
-            cherry-pick
-        reviewers: |
-            aReviewerUser
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-
-        
-
-        
+        pr_branch: 'master'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITBOT_EMAIL: <BOT_EMAIL>
+        DRY_RUN: false
