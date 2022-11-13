@@ -2,7 +2,7 @@ name: PR for release branch
 on:
   push:
     branches:
-      - MyBranch
+      - MyBranch3
 jobs:
   release_pull_request:
     runs-on: ubuntu-latest
