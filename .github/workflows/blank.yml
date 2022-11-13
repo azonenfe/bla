@@ -15,6 +15,10 @@ jobs:
       with:
         branch: 
           main
+        labels: |
+            cherry-pick
+        reviewers: |
+            aReviewerUser
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
