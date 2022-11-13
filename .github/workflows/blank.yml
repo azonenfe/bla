@@ -4,6 +4,7 @@ on:
     push:
       branches:
         - MyBranch2
+      types: ["closed"]
 jobs: 
   cherry-pick-to-master:
     runs-on: ubuntu-latest
@@ -15,10 +16,8 @@ jobs:
       with:
         branch: 
           main
-        labels: |
-            cherry-pick
-        reviewers: |
-            aReviewerUser
+        
+          
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
