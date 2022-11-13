@@ -4,6 +4,7 @@ on:
     push:
       branches:
         - MyBranch2
+
 jobs: 
   cherry-pick-to-master:
     runs-on: ubuntu-latest
@@ -14,7 +15,11 @@ jobs:
       uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
       with:
         branch: 
-          master
+          main
+        labels: |
+            cherry-pick
+        reviewers: |
+            aReviewerUser
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
