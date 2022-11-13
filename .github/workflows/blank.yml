@@ -3,7 +3,7 @@ name: Automerge
 on:
     push:
       branches:
-        - MyBranch
+        - MyBranch2
 jobs: 
   cherry-pick-to-master:
     runs-on: ubuntu-latest
