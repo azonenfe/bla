@@ -1,0 +1,24 @@
+name: Automerge
+
+on:
+    push:
+      branches:
+        - MyBranch
+jobs: 
+  cherry-pick-to-master:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    - name: checrry-pick
+      uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
+      with:
+        branch: 
+          master
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+
+        
+
+        
