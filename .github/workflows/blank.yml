@@ -18,8 +18,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITBOT_EMAIL: akiva.zonenfeld@intel.com
         DRY_RUN: false
-        
-
-        
-
-        
