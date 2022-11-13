@@ -4,7 +4,7 @@ on:
     push:
       branches:
         - MyBranch2
-      types: ["closed"]
+
 jobs: 
   cherry-pick-to-master:
     runs-on: ubuntu-latest
